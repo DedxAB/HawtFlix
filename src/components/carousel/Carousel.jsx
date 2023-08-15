@@ -14,11 +14,32 @@ import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
 
 const Carousel = ({ data, loading }) => {
+  const carouselContainer = useRef();
   const { url } = useSelector((state) => state.home);
   const navigate = useNavigate();
   const navigation = (direction) => {
-    
+    const container = carouselContainer.current;
+
+    const scrollAmount =
+      direction === "left"
+        ? container.scrollLeft - (container.offsetWidth + 20)
+        : container.scrollLeft + (container.offsetWidth + 20);
+
+    container.scrollTo({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
   };
+
+  // const slideRight = () => {
+  //   let rightSlide = document.getElementById("slider");
+  //   rightSlide.scrollLeft = rightSlide.scrollLeft + 5000;
+  // };
+  // const slideLeft = () => {
+  //   let leftSlide = document.getElementById("slider");
+  //   leftSlide.scrollLeft = leftSlide.scrollLeft - 1000;
+  // };
+
   const skeletonItemm = () => {
     return (
       <div className="skeletonItem">
@@ -37,24 +58,30 @@ const Carousel = ({ data, loading }) => {
         <BsFillArrowLeftCircleFill
           className="carouselLeftNav arrow"
           onClick={() => navigation("left")}
+          // onClick={slideLeft}
         />
 
         <BsFillArrowRightCircleFill
           className="carouselRightNav arrow"
           onClick={() => navigation("right")}
+          // onClick={slideRight}
         />
         {!loading ? (
-          <div className="carouselItems">
+          <div className="carouselItems" ref={carouselContainer}>
             {data?.map((item) => {
               const posterUrl = item.poster_path
                 ? url.poster + item.poster_path
                 : PosterFallback;
               return (
-                <div key={item.id} className="carouselItem">
+                <div
+                  key={item.id}
+                  className="carouselItem"
+                  onClick={() => navigate(`/${item.media_type}/${item.id}`)}
+                >
                   <div className="posterBlock">
                     <Img src={posterUrl} />
                     <CircleRating rating={item.vote_average.toFixed(1)} />
-                    <Genres data={item.genre_ids.slice(0,3)} />
+                    <Genres data={item.genre_ids.slice(0, 3)} />
                   </div>
                   <div className="textBlock">
                     <span className="title">{item.title || item.name}</span>
