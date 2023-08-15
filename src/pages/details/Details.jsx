@@ -1,5 +1,11 @@
+import DetailsBanner from "./detailsBanner/DetailsBanner";
+
 const Details = () => {
-  return <div>Details</div>;
+  return (
+    <div>
+      <DetailsBanner />
+    </div>
+  );
 };
 
 export default Details;
