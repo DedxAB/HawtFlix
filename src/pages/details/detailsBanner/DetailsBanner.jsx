@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-
-import "./style.scss";
 import useFetch from "../../../hooks/useFetch";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import { useParams } from "react-router-dom";
+import Img from '../../../components/lazyLoad/Img'
+import PosterFallback from "../../../assets/no-poster.png";
+
+import "./style.scss";
+import { useSelector } from "react-redux";
 
 const DetailsBanner = ({ video, crew }) => {
   const { mediaType, id } = useParams();
-  const { url, loading } = useFetch(`/${mediaType}/${id}`);
+  const { data, loading } = useFetch(`/${mediaType}/${id}`);
+  const { url } = useSelector((state) => state.home);
 
   const toHoursAndMinutes = (totalMinutes) => {
     const hours = Math.floor(totalMinutes / 60);
@@ -18,7 +22,13 @@ const DetailsBanner = ({ video, crew }) => {
   return (
     <div className="detailsBanner">
       {!loading ? (
-        <div>Details Content...</div>
+        <>
+          {!!data && (
+            <div className="backdrop-img">
+              <Img src={url.backdrop + data.backdrop_path} />
+            </div>
+          )}
+        </>
       ) : (
         <div className="detailsBannerSkeleton">
           <ContentWrapper>
