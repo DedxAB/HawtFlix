@@ -31,15 +31,6 @@ const Carousel = ({ data, loading, endPoint }) => {
     });
   };
 
-  // const slideRight = () => {
-  //   let rightSlide = document.getElementById("slider");
-  //   rightSlide.scrollLeft = rightSlide.scrollLeft + 5000;
-  // };
-  // const slideLeft = () => {
-  //   let leftSlide = document.getElementById("slider");
-  //   leftSlide.scrollLeft = leftSlide.scrollLeft - 1000;
-  // };
-
   const skeletonItemm = () => {
     return (
       <div className="skeletonItem">
@@ -58,13 +49,11 @@ const Carousel = ({ data, loading, endPoint }) => {
         <BsFillArrowLeftCircleFill
           className="carouselLeftNav arrow"
           onClick={() => navigation("left")}
-          // onClick={slideLeft}
         />
 
         <BsFillArrowRightCircleFill
           className="carouselRightNav arrow"
           onClick={() => navigation("right")}
-          // onClick={slideRight}
         />
         {!loading ? (
           <div className="carouselItems" ref={carouselContainer}>
