@@ -22,7 +22,7 @@ function App() {
 
   const fetchApiConfig = async () => {
     fetchDataFromApi("/configuration").then((res) => {
-      console.log(res);
+      // console.log(res);
       const url = {
         backdrop: res.images.secure_base_url + "original",
         poster: res.images.secure_base_url + "original",
@@ -40,17 +40,17 @@ function App() {
       promises.push(fetchDataFromApi(`/genre/${url}/list`));
     });
     const data = await Promise.all(promises);
-    console.log(data);
+    // console.log(data);
     data.map(({genres}) => {
       return genres.map((item) => (allGenres[item.id] = item));
     });
-    console.log(allGenres)
+    // console.log(allGenres)
     dispatch(getGenres(allGenres))
   };
 
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:mediaType/:id" element={<Details />} />
