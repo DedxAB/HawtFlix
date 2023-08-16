@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import "./style.scss";
 import CircleRating from "../../../components/circleRating/CircleRating";
 import { PlayButton } from "../PlayButton";
-import VideoPopup from "../../../components/videoPopUp/VideoPopup";
+import VideoPopup from "../../../components/videoPopup/VideoPopup";
 
 const DetailsBanner = ({ video, crew }) => {
   const [show, setShow] = useState(false);
