@@ -62,17 +62,18 @@
       .title {
         font-size: 28px;
         line-height: 40px;
+        margin-bottom: 17px;
         @include md {
           font-size: 34px;
           line-height: 44px;
         }
       }
-      .subtitle {
+      .subTitle {
         font-size: 16px;
         line-height: 24px;
         margin-bottom: 15px;
         font-style: italic;
-        opacity: 0.5;
+        opacity: 0.9;
         @include md {
           font-size: 20px;
           line-height: 28px;
@@ -99,7 +100,7 @@
         max-width: 70px;
         background-color: var(--black2);
         @include md {
-          max-width: 90px;
+          max-width: 75px;
         }
         .CircularProgressbar-text {
           fill: white;
@@ -111,9 +112,9 @@
         gap: 20px;
         cursor: pointer;
         svg {
-          width: 60px;
+          width: 63px;
           @include md {
-            width: 80px;
+            width: 70px;
           }
         }
         .text {
