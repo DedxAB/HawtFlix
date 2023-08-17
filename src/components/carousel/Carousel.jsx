@@ -3,6 +3,7 @@ import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
+import { VscChevronRight, VscChevronLeft } from "react-icons/vsc";
 import Img from "../lazyLoad/Img";
 import PosterFallback from "../../assets/no-poster.png";
 import { useSelector } from "react-redux";
@@ -49,13 +50,11 @@ const Carousel = ({ data, loading, endPoint, title }) => {
         {data?.length > 0 && (
           <>
             {title && <div className="carouselTitle">{title}</div>}
-
-            <BsFillArrowLeftCircleFill
+            <VscChevronLeft
               className="carouselLeftNav arrow"
               onClick={() => navigation("left")}
             />
-
-            <BsFillArrowRightCircleFill
+            <VscChevronRight
               className="carouselRightNav arrow"
               onClick={() => navigation("right")}
             />
