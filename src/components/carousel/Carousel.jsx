@@ -1,8 +1,4 @@
 import { useRef } from "react";
-import {
-  BsFillArrowLeftCircleFill,
-  BsFillArrowRightCircleFill,
-} from "react-icons/bs";
 import { VscChevronRight, VscChevronLeft } from "react-icons/vsc";
 import Img from "../lazyLoad/Img";
 import PosterFallback from "../../assets/no-poster.png";
