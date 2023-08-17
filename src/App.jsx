@@ -49,7 +49,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="https://hawtflix.vercel.app/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route
           path="https://hawtflix.vercel.app/:mediaType/:id"
           element={<Details />}
