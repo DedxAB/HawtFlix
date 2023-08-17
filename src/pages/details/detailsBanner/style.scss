@@ -91,9 +91,9 @@
         }
         .description {
           line-height: 24px;
-          @include md {
-            padding-right: 100px;
-          }
+          // @include md {
+          //   padding-right: 5px;
+          // }
         }
       }
       .circleRating {
