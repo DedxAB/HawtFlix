@@ -4,6 +4,7 @@ import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import { PlayButton } from "../PlayButton";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
 import Img from "../../../components/lazyLoad/Img";
+// import ThumbnailFallback from "../../../assets/no-thumbnail-medium.png";
 
 const VideosSection = ({ data, loading }) => {
   const [show, setShow] = useState(false);
@@ -38,9 +39,9 @@ const VideosSection = ({ data, loading }) => {
                       }}
                     >
                       <div className="videoThumbnail">
-                        <Img
-                          src={`https://img.youtube.com/vi/${video?.key}/maxresdefault.jpg`}
-                        />
+                          <Img
+                            src={`https://img.youtube.com/vi/${video?.key}/maxresdefault.jpg`}
+                          />
                         <PlayButton />
                       </div>
                       <div className="videoTitle">{video?.name}</div>
