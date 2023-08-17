@@ -20,48 +20,52 @@ const VideosSection = ({ data, loading }) => {
   };
 
   return (
-    <div className="videosSection">
-      <ContentWrapper>
-        <div className="sectionHeading">Official Videos</div>
-        {!loading ? (
-          <div className="videos">
-            {data?.results?.map((video) => (
-              <div
-                className="videoItem"
-                key={video.id}
-                onClick={() => {
-                  setVideoId(video?.key);
-                  setShow(true);
-                }}
-              >
-                <div className="videoThumbnail">
-                  <Img
-                    src={`https://img.youtube.com/vi/${video?.key}/maxresdefault.jpg`}
-                  />
-                  <PlayButton />
+    <>
+      {data?.results?.length > 0 && (
+        <div className="videosSection">
+          <ContentWrapper>
+            <div className="sectionHeading">Official Videos</div>
+            {!loading ? (
+              <>
+                <div className="videos">
+                  {data?.results?.map((video) => (
+                    <div
+                      className="videoItem"
+                      key={video.id}
+                      onClick={() => {
+                        setVideoId(video?.key);
+                        setShow(true);
+                      }}
+                    >
+                      <div className="videoThumbnail">
+                        <Img
+                          src={`https://img.youtube.com/vi/${video?.key}/maxresdefault.jpg`}
+                        />
+                        <PlayButton />
+                      </div>
+                      <div className="videoTitle">{video?.name}</div>
+                    </div>
+                  ))}
                 </div>
-                <div className="videoTitle">
-                  {video?.name}
-                </div>
+              </>
+            ) : (
+              <div className="videoSkeleton">
+                {loadingSkeleton()}
+                {loadingSkeleton()}
+                {loadingSkeleton()}
+                {loadingSkeleton()}
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="videoSkeleton">
-            {loadingSkeleton()}
-            {loadingSkeleton()}
-            {loadingSkeleton()}
-            {loadingSkeleton()}
-          </div>
-        )}
-      </ContentWrapper>
-      <VideoPopup
-        show={show}
-        setShow={setShow}
-        videoId={videoId}
-        setVideoId={setVideoId}
-      />
-    </div>
+            )}
+          </ContentWrapper>
+          <VideoPopup
+            show={show}
+            setShow={setShow}
+            videoId={videoId}
+            setVideoId={setVideoId}
+          />
+        </div>
+      )}
+    </>
   );
 };
 
