@@ -51,15 +51,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
-          path="https://hawtflix.vercel.app/:mediaType/:id"
+          path="/:mediaType/:id"
           element={<Details />}
         />
         <Route
-          path="https://hawtflix.vercel.app/search/:query"
+          path="/search/:query"
           element={<SearchResult />}
         />
         <Route
-          path="https://hawtflix.vercel.app/explore/:mediaType"
+          path="/explore/:mediaType"
           element={<Explore />}
         />
         <Route path="*" element={<PageNotFound />} />
