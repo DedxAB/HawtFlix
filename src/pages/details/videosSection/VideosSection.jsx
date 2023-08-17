@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./style.scss";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
-import {PlayButton} from "../PlayButton";
+import { PlayButton } from "../PlayButton";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
 import Img from "../../../components/lazyLoad/Img";
 
@@ -24,7 +24,28 @@ const VideosSection = ({ data, loading }) => {
       <ContentWrapper>
         <div className="sectionHeading">Official Videos</div>
         {!loading ? (
-          <div className="videos">Videos data...</div>
+          <div className="videos">
+            {data?.results?.map((video) => (
+              <div
+                className="videoItem"
+                key={video.id}
+                onClick={() => {
+                  setVideoId(video?.key);
+                  setShow(true);
+                }}
+              >
+                <div className="videoThumbnail">
+                  <Img
+                    src={`https://img.youtube.com/vi/${video?.key}/maxresdefault.jpg`}
+                  />
+                  <PlayButton />
+                </div>
+                <div className="videoTitle">
+                  {video?.name}
+                </div>
+              </div>
+            ))}
+          </div>
         ) : (
           <div className="videoSkeleton">
             {loadingSkeleton()}
