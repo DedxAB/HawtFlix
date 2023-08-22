@@ -59,17 +59,20 @@ const DetailsBanner = ({ video, crew }) => {
                   <div className="right">
                     <div className="title">
                       {`${data?.name || data?.title} (${dayjs(
-                        data?.release_date
+                        data?.release_date || data?.first_air_date
                       ).format("YYYY")})`}
                     </div>
                     <div className="subTitle">{data?.tagline}</div>
                     <Genres data={_genres} />
                     <div className="row">
                       <CircleRating rating={data?.vote_average.toFixed(1)} />
-                      <div className="playbtn" onClick={() => {
-                        setShow(true)
-                        setVideoId(video.key)
-                      }}>
+                      <div
+                        className="playbtn"
+                        onClick={() => {
+                          setShow(true);
+                          setVideoId(video.key);
+                        }}
+                      >
                         <PlayButton />
                         <span className="text">Watch Trailer</span>
                       </div>
@@ -151,7 +154,7 @@ const DetailsBanner = ({ video, crew }) => {
                 />
               </ContentWrapper>
             </>
-          )} 
+          )}
         </>
       ) : (
         <div className="detailsBannerSkeleton">
