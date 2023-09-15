@@ -1,15 +1,14 @@
+import "./style.scss";
+
+import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
+
 const PageNotFound = () => {
   return (
-    <div
-      style={{
-        height: "100vh",
-        color: "white",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div className="center">Page not found</div>
+    <div className="pageNotFound">
+      <ContentWrapper>
+        <span className="bigText">404</span>
+        <span className="smallText">Page not found!</span>
+      </ContentWrapper>
     </div>
   );
 };
