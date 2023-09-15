@@ -88,11 +88,13 @@ const DetailsBanner = ({ video, crew }) => {
                           <span className="text">{data.status}</span>
                         </div>
                       )}
-                      {data.release_date && (
+                      {(data?.release_date || data?.first_air_date) && (
                         <div className="infoItem">
                           <span className="text bold">Release Date: </span>
                           <span className="text">
-                            {dayjs(data.release_date).format("MMM D, YYYY")}
+                            {dayjs(
+                              data.release_date || data.first_air_date
+                            ).format("MMM D, YYYY")}
                           </span>
                         </div>
                       )}
@@ -104,7 +106,31 @@ const DetailsBanner = ({ video, crew }) => {
                           </span>
                         </div>
                       )}
+                      {data?.number_of_seasons && (
+                        <div className="infoItem">
+                          <span className="text bold">Totoal Season: </span>
+                          <span className="text">{data.number_of_seasons}</span>
+                        </div>
+                      )}
+                      {data?.number_of_episodes && (
+                        <div className="infoItem">
+                          <span className="text bold">Total Episod: </span>
+                          <span className="text">
+                            {data.number_of_episodes}
+                          </span>
+                        </div>
+                      )}
                     </div>
+                    {/* {data?.last_episode_to_air?.runtime && (
+                      <div className="info">
+                        <span className="text bold">Last Episode Runtime: </span>
+                        <span className="text">
+                          {toHoursAndMinutes(
+                            data.last_episode_to_air?.runtime
+                          )}
+                        </span>
+                      </div>
+                    )} */}
                     {director?.length > 0 && (
                       <div className="info">
                         <span className="text bold">Director: </span>
