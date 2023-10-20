@@ -30,13 +30,19 @@ const Footer = () => {
         </div>
         <div className="socialIcons">
           <span className="icon">
-            <FaFacebookF />
+            <a href="http://facebook.com">
+              <FaFacebookF />
+            </a>
           </span>
           <span className="icon">
-            <FaInstagram />
+            <a href="https://www.instagram.com/sumit_ig09/">
+              <FaInstagram />
+            </a>
           </span>
           <span className="icon">
-            <FaTwitter />
+            <a href="https://twitter.com/sumit_tw09">
+              <FaTwitter />
+            </a>
           </span>
           <span className="icon">
             <FaLinkedin />
