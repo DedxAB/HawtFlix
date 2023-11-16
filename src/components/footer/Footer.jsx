@@ -21,27 +21,44 @@ const Footer = () => {
           <li className="menuItem">FAQ</li>
         </ul>
         <div className="infoText">
-          This website dedicated to providing you with the best movie
-          reviews and recommendations. Our team of experienced reviewers watches
-          the latest movies and TV shows so you don't have to. I hope you'll take some time to explore our website and find some great movies and TV shows to watch.
+          This website dedicated to providing you with the best movie reviews
+          and recommendations. Our team of experienced reviewers watches the
+          latest movies and TV shows so you don't have to. I hope you'll take
+          some time to explore our website and find some great movies and TV
+          shows to watch.
         </div>
         <div className="socialIcons">
-          <span className="icon">
-            <a href="http://facebook.com">
-              <FaFacebookF />
-            </a>
+          <span
+            className="icon"
+            onClick={() => window.open("https://www.facebook.com", "_blank")}
+          >
+            <FaFacebookF />
           </span>
-          <span className="icon">
-            <a href="https://www.instagram.com/sumit_ig09/">
-              <FaInstagram />
-            </a>
+          <span
+            className="icon"
+            onClick={() =>
+              window.open("https://www.instagram.com/sumit_ig09/", "_blank")
+            }
+          >
+            <FaInstagram />
           </span>
-          <span className="icon">
-            <a href="https://twitter.com/sumit_tw09">
-              <FaTwitter />
-            </a>
+          <span
+            className="icon"
+            onClick={() => {
+              window.open("https://twitter.com/sumit_tw09", "_blank");
+            }}
+          >
+            <FaTwitter />
           </span>
-          <span className="icon">
+          <span
+            className="icon"
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/arnab-bhoumik-b8976a24a",
+                "_blank"
+              )
+            }
+          >
             <FaLinkedin />
           </span>
         </div>
