@@ -105,6 +105,15 @@
         .CircularProgressbar-text {
           fill: white;
         }
+        svg {
+          width: 47px;
+          @include md {
+            width: 51px;
+          }
+          @include lg {
+            width: 65px;
+          }
+        }
       }
       .playbtn {
         display: flex;
@@ -112,9 +121,9 @@
         gap: 20px;
         cursor: pointer;
         svg {
-          width: 63px;
+          width: 44px;
           @include md {
-            width: 70px;
+            width: 60px;
           }
         }
         .text {
@@ -147,6 +156,34 @@
           .circle {
             stroke-dashoffset: 0;
             stroke: var(--pink);
+          }
+        }
+      }
+      .googleSearch {
+        display: flex;
+        gap: 20px;
+        cursor: pointer;
+        align-items: center;
+        svg {
+          width: 44px;
+          @include md {
+            width: 54px;
+          }
+          @include lg {
+            width: 61px;
+          }
+        }
+        .text {
+          display: none;
+          font-size: 20px;
+          transition: all 0.7s ease-in-out;
+          @include lg {
+            display: block;
+          }
+        }
+        &:hover {
+          .text {
+            color: var(--pink);
           }
         }
       }

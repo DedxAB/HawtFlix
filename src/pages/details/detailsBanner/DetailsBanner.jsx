@@ -11,6 +11,7 @@ import "./style.scss";
 import CircleRating from "../../../components/circleRating/CircleRating";
 import { PlayButton } from "../PlayButton";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
+import GoogleSearchBtn from "../GoogleSearchBtn";
 
 const DetailsBanner = ({ video, crew }) => {
   const [show, setShow] = useState(false);
@@ -75,6 +76,22 @@ const DetailsBanner = ({ video, crew }) => {
                       >
                         <PlayButton />
                         <span className="text">Watch Trailer</span>
+                      </div>
+                      <div
+                        className="googleSearch"
+                        onClick={() => {
+                          window.open(
+                            `https://www.google.com/search?q=${
+                              data?.name || data?.title
+                            } ${dayjs(
+                              data?.release_date || data?.first_air_date
+                            ).format("YYYY")}`,
+                            "_blank"
+                          );
+                        }}
+                      >
+                        <GoogleSearchBtn />
+                        <span className="text">Google It</span>
                       </div>
                     </div>
                     <div className="overview">
