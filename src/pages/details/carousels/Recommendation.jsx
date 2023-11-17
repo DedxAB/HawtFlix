@@ -6,7 +6,7 @@ const Recommendation = ({ mediaType, id }) => {
     `/${mediaType}/${id}/recommendations`
     );
     
-    const title = mediaType === 'tv'? 'Recomended Tv Shows':'Recomended Movies'
+    const title = mediaType === 'tv'? 'Recomended TV Shows':'Recomended Movies'
 
   return (
     <Carousel

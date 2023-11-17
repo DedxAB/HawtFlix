@@ -31,7 +31,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
   const skeletonItemm = () => {
     return (
       <div className="skeletonItem">
-        <div className="posterBlockSkeleton skeleton"></div>.
+        <div className="posterBlockSkeleton skeleton"></div>
         <div className="textBlock">
           <div className="title skeleton"></div>
           <div className="date skeleton"></div>
@@ -75,12 +75,14 @@ const Carousel = ({ data, loading, endPoint, title }) => {
                     <div className="posterBlock">
                       <Img src={posterUrl} />
                       <CircleRating rating={item.vote_average.toFixed(1)} />
-                      <Genres data={item.genre_ids.slice(0, 3)} />
+                      <Genres data={item.genre_ids.slice(0, 2)} />
                     </div>
                     <div className="textBlock">
                       <span className="title">{item.title || item.name}</span>
                       <span>
-                        {dayjs(item?.release_date || item?.first_air_date).format("MMM D, YYYY")}
+                        {dayjs(
+                          item?.release_date || item?.first_air_date
+                        ).format("MMM D, YYYY")}
                       </span>
                     </div>
                   </div>
