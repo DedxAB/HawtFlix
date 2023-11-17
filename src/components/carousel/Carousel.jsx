@@ -45,7 +45,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
       <ContentWrapper>
         {data?.length > 0 && (
           <>
-            {title && <div className="carouselTitle">{title}</div>}
+            {/* {title && <div className="carouselTitle">{title}</div>} */}
             <VscChevronLeft
               className="carouselLeftNav arrow"
               onClick={() => navigation("left")}
