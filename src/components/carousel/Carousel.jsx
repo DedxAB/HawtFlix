@@ -31,7 +31,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
   const skeletonItemm = () => {
     return (
       <div className="skeletonItem">
-        <div className="posterBlockSkeleton skeleton"></div>
+        <div className="posterBlock skeleton"></div>
         <div className="textBlock">
           <div className="title skeleton"></div>
           <div className="date skeleton"></div>
@@ -64,6 +64,7 @@ const Carousel = ({ data, loading, endPoint, title }) => {
                 const posterUrl = item.poster_path
                   ? url.poster + item.poster_path
                   : PosterFallback;
+
                 return (
                   <div
                     key={item.id}

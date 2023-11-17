@@ -12,29 +12,25 @@
   }
   .arrow {
     font-size: 30px;
-    color: rgb(6, 6, 6);
+    color: black;
     position: absolute;
-    height: 100px;
-    width: 33px;
     top: 44%;
-    border-radius: 3px;
     transform: translateY(-50%);
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.5;
     z-index: 1;
     display: none;
     @include md {
       display: block;
     }
     &:hover {
-      opacity: 1;
-      background: #ffffff3b;
+      opacity: 0.8;
     }
   }
   .carouselLeftNav {
     left: 30px;
   }
-  .carouselRightNav {
+  .carouselRighttNav {
     right: 30px;
   }
   .loadingSkeleton {
