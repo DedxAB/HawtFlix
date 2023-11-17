@@ -35,6 +35,10 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
+        transition: transform 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
     .circleRating {
@@ -79,7 +83,7 @@
   }
   &:hover {
     .posterBlock {
-      opacity: 0.5;
+      opacity: 0.7;
     }
   }
 }
